@@ -8,20 +8,26 @@ public class PersonalDetails {
 	private String lastName;
 	private String gender;
 	private String title;
+	private String email;
 	private LocalDate dateOfBirth;
 
 	public PersonalDetails() {
 		super();
 	}
 
-	public PersonalDetails(String firstName, String lastName, String gender, String title, LocalDate dateOfBirth) {
+
+	public PersonalDetails(String firstName, String lastName, String gender, String title, String email,
+			LocalDate dateOfBirth) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
 		this.title = title;
+		this.email = email;
 		this.dateOfBirth = dateOfBirth;
 	}
+
+
 
 	public String getFirstName() {
 		return firstName;
@@ -63,10 +69,21 @@ public class PersonalDetails {
 		this.dateOfBirth = dateOfBirth;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "PersonalDetails [firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender + ", title="
-				+ title + ", dateOfBirth=" + dateOfBirth + "]";
+				+ title + ", email=" + email + ", dateOfBirth=" + dateOfBirth + "]";
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	

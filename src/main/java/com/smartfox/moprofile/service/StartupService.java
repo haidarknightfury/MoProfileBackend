@@ -33,16 +33,15 @@ public class StartupService implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		PersonalDetails personalDetails = new PersonalDetails("haidar", "dargaye", "male", "Mr", LocalDate.of(1995, 12, 5));
-		WorkDetails workDetails = new WorkDetails("dso", "", BigInteger.valueOf(25000L));
-		Profile profile = new Profile(personalDetails, workDetails);
-		this.profileRepository.save(profile);
-		cleanUp();
-		
-		this.roleRepository.deleteAll();
-		this.roleRepository.saveAll(Arrays.asList(new Role(RoleEnum.ROLE_USER), new Role(RoleEnum.ROLE_ADMIN)));
-		
-		this.userRepository.deleteAll();
+//		PersonalDetails personalDetails = new PersonalDetails("haidar", "dargaye", "male", "Mr", LocalDate.of(1995, 12, 5));
+//		WorkDetails workDetails = new WorkDetails("dso", "", BigInteger.valueOf(25000L));
+//		Profile profile = new Profile("hdargaye" ,personalDetails, workDetails);
+//		this.profileRepository.save(profile);
+//		cleanUp();
+//		
+//		this.roleRepository.deleteAll();
+//		this.roleRepository.saveAll(Arrays.asList(new Role(RoleEnum.ROLE_USER), new Role(RoleEnum.ROLE_ADMIN)));		
+//		this.userRepository.deleteAll();
 	}
 	
 	public void cleanUp() {

@@ -8,15 +8,18 @@ public class Profile extends AbstractDocument {
 
 
 	private static final long serialVersionUID = 1L;
-		
+	
+	@Indexed(unique = true)
+	private String username;
 	@Indexed(unique = true)
 	private PersonalDetails personal;
 	private WorkDetails work;
 
-	public Profile(PersonalDetails personal, WorkDetails work) {
+	public Profile(String username, PersonalDetails personal, WorkDetails work) {
 		super();
 		this.personal = personal;
 		this.work = work;
+		this.setUsername(username);
 	}
 
 	public Profile() {
@@ -39,9 +42,19 @@ public class Profile extends AbstractDocument {
 		this.work = work;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
-		return "Profile [personal=" + personal + ", work=" + work + "]";
+		return "Profile [username=" + username + ", personal=" + personal + ", work=" + work + "]";
 	}
+	
+	
 
 }
